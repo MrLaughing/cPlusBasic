@@ -2,6 +2,8 @@
 #include "circle.cpp"
 #include "math.h"
 #include "iomanip"
+#include "stdlib.h"
+#include "time.h"
 using namespace std;
 void variable(){
     cout<<"变量引用&是变量的别名，引用和变量占用同一存储空间。"<<endl;
@@ -56,9 +58,37 @@ void testswitch(){
         default:cout<<"垃圾"<<endl;
     }
 }
+void yanghui(){
+    int n;
+    cout<<"请定义n"<<endl;
+    cin>>n;
+    int m[n][n];
+    for(int i = 0;i <n;i++){//外围都是1
+        m[i][0] = m[i][i] = 1;
+    }
+    for(int i = 2;i<n;i++){
+        for(int j = 1; j<i;j++){//从第三行开始，内部实现
+            m[i][j] = m[i-1][j]+m[i-1][j-1];
+        }
+    }
+    cout<<"输出杨辉三角："<<endl;
+    for(int i = 0;i<n;i++){
+        for(int j = 0;j<=i;j++){
+            cout<<setw(4)<<m[i][j];
+        }
+        cout<<endl;
+    }
+}
 /*程序入口*/
 int main()
 {
+    yanghui();
+    /* srand(time(NULL));//初始化随机种子数
+    int n = rand()%20+1;
+    cout<<n;
+    int m[n];
+    m[0] = 5;
+    cout<<m[0];
     cout << "Hello"<<setw(5)<<"C++!"<<endl;//setw(5)：表示后面输出的要占5个位置，用来控制间隔,引用库文件iomanip.h
     testswitch();
     change();
@@ -69,6 +99,6 @@ int main()
     float a = b;
     cout<<a;
     main1();
-    variable();
+    variable(); */
     return 0;
 }
