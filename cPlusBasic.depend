@@ -1,10 +1,12 @@
 # depslib dependency file v1.0
-1461835513 source:d:\laughing\codeblock\cplusbasic\main.cpp
+1462427103 source:d:\laughing\codeblock\cplusbasic\main.cpp
 	"iostream"
 	"circle.cpp"
 	"math.h"
 	"iomanip"
 	"stdlib.h"
+	"time.h"
+	"string.h"
 
 1461755355 source:d:\laughing\codeblock\cplusbasic\circle.cpp
 	"stdio.h"

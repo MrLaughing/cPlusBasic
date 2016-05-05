@@ -4,6 +4,7 @@
 #include "iomanip"
 #include "stdlib.h"
 #include "time.h"
+#include "string.h"
 using namespace std;
 void variable(){
     cout<<"变量引用&是变量的别名，引用和变量占用同一存储空间。"<<endl;
@@ -79,11 +80,43 @@ void yanghui(){
         cout<<endl;
     }
 }
+void testStr(){
+    char s[6];
+    char s1[6];
+    char s2[20];
+    //cout<<"s数组的长度为："<<strlen(s)<<endl;
+    //cin>>s;
+    gets(s);//gets函数可输入空格/跳格符
+    cout<<strlen(s)<<endl;
+    cout<<s<<endl;
+    strcpy(s1,s);//实现复制字符串功能
+    cout<<s1<<endl;
+    int i;
+    for(i =0; s[i]!='\0';i++){
+        s1[i] = s[i];
+    }
+    s1[i] = '\0';//结束符
+    cout<<s1<<endl;
+    cout<<s2<<endl;
+    strcat(s2,s);
+    strcat(s2,"这里后续添加字符串");
+    cout<<s2<<endl;
+    char password[16];
+    cin>>password;
+    if(strcmp(password,"14120097")){//C/C++里if语句判断()里表达式的值是否非0!!!
+        //这里strcmp判断后 若大于，返回1，若小于返回-1，均在此！
+        cout<<"不正确";
+    }else{//strcmp判断后，若相等，返回0，在这里！
+        cout<<"正确";
+    }
+
+}
 /*程序入口*/
 int main()
 {
-    yanghui();
-    /* srand(time(NULL));//初始化随机种子数
+    testStr();
+    /* yanghui();
+    srand(time(NULL));//初始化随机种子数
     int n = rand()%20+1;
     cout<<n;
     int m[n];
